@@ -3,5 +3,6 @@ python2和python3的API存在些许区别，于是我想，为什么不重构成
 预计半个月到一个月完成。
 
 > 本项目打算参考：
+> * 课程主页：https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/
 > * https://github.com/DCtheTall/mit6.006
 > * https://github.com/MUCZ/MIT-6.006-Introduction-to-Algorithms
