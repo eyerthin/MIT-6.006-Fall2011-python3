@@ -1,0 +1,568 @@
+
+Test Misc-1 -- running time should be n+2*m+7+3*n*lg(n)+17*n*m
+Spec_string:  1<=n<=100000;1<=m<=100000 by factors of 10
+var_list ['n', 'm']
+Function list: ('(n*m)', 'n**2', 'n*lg(n)', 'n', 'm', '1')
+run times:
+n =      1 m =      1 : 27.000000 microseconds
+n =      1 m =     10 : 198.000000 microseconds
+n =      1 m =    100 : 1908.000000 microseconds
+n =      1 m =   1000 : 19008.000000 microseconds
+n =      1 m =  10000 : 190008.000000 microseconds
+n =      1 m = 100000 : 1900008.000000 microseconds
+n =     10 m =      1 : 288.657843 microseconds
+n =     10 m =     10 : 1836.657843 microseconds
+n =     10 m =    100 : 17316.657843 microseconds
+n =     10 m =   1000 : 172116.657843 microseconds
+n =     10 m =  10000 : 1720116.657843 microseconds
+n =     10 m = 100000 : 17200116.657843 microseconds
+n =    100 m =      1 : 3802.156857 microseconds
+n =    100 m =     10 : 19120.156857 microseconds
+n =    100 m =    100 : 172300.156857 microseconds
+n =    100 m =   1000 : 1704100.156857 microseconds
+n =    100 m =  10000 : 17022100.156857 microseconds
+n =    100 m = 100000 : 170202100.156857 microseconds
+n =   1000 m =      1 : 47906.352854 microseconds
+n =   1000 m =     10 : 200924.352854 microseconds
+n =   1000 m =    100 : 1731104.352854 microseconds
+n =   1000 m =   1000 : 17032904.352854 microseconds
+n =   1000 m =  10000 : 170050904.352854 microseconds
+n =   1000 m = 100000 : 1700230904.352854 microseconds
+n =  10000 m =      1 : 578640.371386 microseconds
+n =  10000 m =     10 : 2108658.371386 microseconds
+n =  10000 m =    100 : 17408838.371386 microseconds
+n =  10000 m =   1000 : 170410638.371386 microseconds
+n =  10000 m =  10000 : 1700428638.371387 microseconds
+n =  10000 m = 100000 : 17000608638.371386 microseconds
+n = 100000 m =      1 : 6782901.142331 microseconds
+n = 100000 m =     10 : 22082919.142331 microseconds
+n = 100000 m =    100 : 175083099.142331 microseconds
+n = 100000 m =   1000 : 1705084899.142331 microseconds
+n = 100000 m =  10000 : 17005102899.142330 microseconds
+n = 100000 m = 100000 : 170005282899.142334 microseconds
+Coefficients as interpolated from data:
+ 17*(n*m)
+-4.36072e-12*n**2
++3*n*lg(n)
++1*n
++2*m
++7*1
+(measuring time in microseconds)
+Sum of squares of residuals: 2.0114496461580537e-17
+RMS error = 7.5e-08 percent
+
+Test Misc-2: pass
+Spec_string:  10000<=n<=1000000 by factors of 2
+var_list ['n']
+Function list: ('1',)
+run times:
+n =  10000 : 0.006700 microseconds
+n =  20000 : 0.006600 microseconds
+n =  40000 : 0.006500 microseconds
+n =  80000 : 0.006500 microseconds
+n = 160000 : 0.006600 microseconds
+n = 320000 : 0.006500 microseconds
+n = 640000 : 0.006500 microseconds
+Coefficients as interpolated from data:
+ 0.00655555*1
+(measuring time in microseconds)
+Sum of squares of residuals: [0.00084768]
+RMS error = 1.1 percent
+
+Test Number-1 -- time to compute int('1'*n)
+Spec_string:  1000<=n<=10000 by factors of 2
+var_list ['n']
+Function list: ('n**2',)
+run times:
+n =   1000 : 7.202000 microseconds
+n =   2000 : 22.073300 microseconds
+n =   4000 : 76.547000 microseconds
+n =   8000 : 279.134400 microseconds
+Coefficients as interpolated from data:
+ 5.11106e-06*n**2
+(measuring time in microseconds)
+Sum of squares of residuals: [0.12394263]
+RMS error = 18 percent
+
+Test Number-2 -- time to compute repr(2**n)
+Spec_string:  1000<=n<=10000 by factors of 2
+var_list ['n']
+Function list: ('n**2',)
+run times:
+n =   1000 : 1.609500 microseconds
+n =   2000 : 5.841200 microseconds
+n =   4000 : 22.058000 microseconds
+n =   8000 : 86.117300 microseconds
+Coefficients as interpolated from data:
+ 1.43509e-06*n**2
+(measuring time in microseconds)
+Sum of squares of residuals: [0.01814287]
+RMS error = 6.7 percent
+
+Test Number-3 -- time to convert (2**n) to hex
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 0.585400 microseconds
+n =   2000 : 1.243500 microseconds
+n =   4000 : 1.978500 microseconds
+n =   8000 : 3.502400 microseconds
+n =  16000 : 6.950800 microseconds
+n =  32000 : 12.444600 microseconds
+n =  64000 : 24.256100 microseconds
+Coefficients as interpolated from data:
+ 0.000449326*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.19977205]
+RMS error = 17 percent
+
+Test Number-4 -- time to add 2**n to itself
+Spec_string:  1000<=n<=1000000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 0.073170 microseconds
+n =   2000 : 0.095600 microseconds
+n =   4000 : 0.216790 microseconds
+n =   8000 : 0.322650 microseconds
+n =  16000 : 0.542850 microseconds
+n =  32000 : 0.948440 microseconds
+n =  64000 : 1.782670 microseconds
+n = 128000 : 3.504280 microseconds
+n = 256000 : 6.703960 microseconds
+n = 512000 : 13.781740 microseconds
+Coefficients as interpolated from data:
+ 3.19192e-05*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.78136834]
+RMS error = 28 percent
+
+Test Number-5 -- time to multiply (2**n/3) by itself
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n**1.585',)
+run times:
+n =   1000 : 0.776600 microseconds
+n =   2000 : 2.846800 microseconds
+n =   4000 : 9.423800 microseconds
+n =   8000 : 24.760100 microseconds
+n =  16000 : 75.650400 microseconds
+n =  32000 : 230.715800 microseconds
+n =  64000 : 712.067100 microseconds
+Coefficients as interpolated from data:
+ 1.62039e-05*n**1.585
+(measuring time in microseconds)
+Sum of squares of residuals: [0.0542657]
+RMS error = 8.8 percent
+
+Test Number-6 -- time to divide (2**(2n) by (2**n))
+Spec_string:  1000<=n<=50000 by factors of 2
+var_list ['n']
+Function list: ('n**2',)
+run times:
+n =   1000 : 2.033200 microseconds
+n =   2000 : 6.666100 microseconds
+n =   4000 : 23.446500 microseconds
+n =   8000 : 87.660900 microseconds
+n =  16000 : 342.405400 microseconds
+n =  32000 : 1338.295200 microseconds
+Coefficients as interpolated from data:
+ 1.4634e-06*n**2
+(measuring time in microseconds)
+Sum of squares of residuals: [0.1212677]
+RMS error = 14 percent
+
+Test Number-7 -- time to compute remainder of (2**(2n) by (2**n))
+Spec_string:  1000<=n<=50000 by factors of 2
+var_list ['n']
+Function list: ('n**2',)
+run times:
+n =   1000 : 1.746000 microseconds
+n =   2000 : 6.007100 microseconds
+n =   4000 : 22.248300 microseconds
+n =   8000 : 85.961800 microseconds
+n =  16000 : 389.672500 microseconds
+n =  32000 : 1340.041700 microseconds
+Coefficients as interpolated from data:
+ 1.44253e-06*n**2
+(measuring time in microseconds)
+Sum of squares of residuals: [0.05184441]
+RMS error = 9.3 percent
+
+Test Number-8 -- time to compute pow(x,y,z)
+Spec_string:  1000<=n<=5000 by factors of 2
+var_list ['n']
+Function list: ('n**3',)
+run times:
+n =   1000 : 2462.550000 microseconds
+n =   2000 : 17231.320000 microseconds
+n =   4000 : 125177.740000 microseconds
+Coefficients as interpolated from data:
+ 2.15257e-06*n**3
+(measuring time in microseconds)
+Sum of squares of residuals: [0.02595606]
+RMS error = 9.3 percent
+
+Test Number-9 -- time to compute 2**n
+Spec_string:  1000<=n<=1000000 by factors of 2
+var_list ['n']
+Function list: ('1',)
+run times:
+n =   1000 : 0.009920 microseconds
+n =   2000 : 0.009400 microseconds
+n =   4000 : 0.012080 microseconds
+n =   8000 : 0.009390 microseconds
+n =  16000 : 0.009400 microseconds
+n =  32000 : 0.009900 microseconds
+n =  64000 : 0.009400 microseconds
+n = 128000 : 0.009400 microseconds
+n = 256000 : 0.009400 microseconds
+n = 512000 : 0.010150 microseconds
+Coefficients as interpolated from data:
+ 0.00974255*1
+(measuring time in microseconds)
+Sum of squares of residuals: [0.04767522]
+RMS error = 6.9 percent
+
+Test String-1: extract a byte from a string
+Spec_string:  1000<=n<=1000000 by factors of 2
+var_list ['n']
+Function list: ('1',)
+run times:
+n =   1000 : 0.027400 microseconds
+n =   2000 : 0.027500 microseconds
+n =   4000 : 0.026800 microseconds
+n =   8000 : 0.032000 microseconds
+n =  16000 : 0.030600 microseconds
+n =  32000 : 0.030900 microseconds
+n =  64000 : 0.032500 microseconds
+n = 128000 : 0.032400 microseconds
+n = 256000 : 0.028900 microseconds
+n = 512000 : 0.030300 microseconds
+Coefficients as interpolated from data:
+ 0.0296446*1
+(measuring time in microseconds)
+Sum of squares of residuals: [0.04818513]
+RMS error = 6.9 percent
+
+Test String-2: concatenate two string of length n
+Spec_string:  1000<=n<=500000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 0.147100 microseconds
+n =   2000 : 0.326500 microseconds
+n =   4000 : 0.473800 microseconds
+n =   8000 : 0.709300 microseconds
+n =  16000 : 1.302100 microseconds
+n =  32000 : 2.290200 microseconds
+n =  64000 : 4.381600 microseconds
+n = 128000 : 8.640100 microseconds
+n = 256000 : 17.829500 microseconds
+Coefficients as interpolated from data:
+ 8.10181e-05*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.68068534]
+RMS error = 28 percent
+
+Test String-3: extract a string of length n/2
+Spec_string:  1000<=n<=500000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 0.140800 microseconds
+n =   2000 : 0.158100 microseconds
+n =   4000 : 0.190200 microseconds
+n =   8000 : 0.268400 microseconds
+n =  16000 : 0.400000 microseconds
+n =  32000 : 0.693800 microseconds
+n =  64000 : 1.275100 microseconds
+n = 128000 : 2.323900 microseconds
+n = 256000 : 4.467300 microseconds
+Coefficients as interpolated from data:
+ 2.26359e-05*n
+(measuring time in microseconds)
+Sum of squares of residuals: [1.77258583]
+RMS error = 44 percent
+
+Test String-4: translate a string of length n
+Spec_string:  1000<=n<=500000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 0.954400 microseconds
+n =   2000 : 1.415800 microseconds
+n =   4000 : 2.402200 microseconds
+n =   8000 : 4.576800 microseconds
+n =  16000 : 8.887100 microseconds
+n =  32000 : 16.933000 microseconds
+n =  64000 : 34.287600 microseconds
+n = 128000 : 66.651600 microseconds
+n = 256000 : 139.183800 microseconds
+Coefficients as interpolated from data:
+ 0.000577803*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.22320234]
+RMS error = 16 percent
+
+Test List-1: create an empty list
+Spec_string:  1<=n<=10 by factors of 2
+var_list ['n']
+Function list: ('1',)
+run times:
+n =      1 : 0.099100 microseconds
+n =      2 : 0.138400 microseconds
+n =      4 : 0.105700 microseconds
+n =      8 : 0.117300 microseconds
+Coefficients as interpolated from data:
+ 0.11164*1
+(measuring time in microseconds)
+Sum of squares of residuals: [0.05888368]
+RMS error = 12 percent
+
+Test List-2: list (array) lookup
+Spec_string:  10000<=n<=1000000 by factors of 2
+var_list ['n']
+Function list: ('1',)
+run times:
+n =  10000 : 0.017700 microseconds
+n =  20000 : 0.018500 microseconds
+n =  40000 : 0.018200 microseconds
+n =  80000 : 0.018400 microseconds
+n = 160000 : 0.017500 microseconds
+n = 320000 : 0.018300 microseconds
+n = 640000 : 0.018100 microseconds
+Coefficients as interpolated from data:
+ 0.0180868*1
+(measuring time in microseconds)
+Sum of squares of residuals: [0.00256546]
+RMS error = 1.9 percent
+
+Test List-3: appending to a list of length n
+Spec_string:  10000<=n<=1000000 by factors of 2
+var_list ['n']
+Function list: 1
+run times:
+n =  10000 : 0.050100 microseconds
+n =  20000 : 0.052500 microseconds
+n =  40000 : 0.052300 microseconds
+n =  80000 : 0.055900 microseconds
+n = 160000 : 0.052400 microseconds
+n = 320000 : 0.053200 microseconds
+n = 640000 : 0.053500 microseconds
+Coefficients as interpolated from data:
+ 0.0527463*1
+(measuring time in microseconds)
+Sum of squares of residuals: [0.00638255]
+RMS error = 3 percent
+
+Test List-4: Pop
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('1',)
+run times:
+n =   1000 : 0.083500 microseconds
+n =   2000 : 0.084000 microseconds
+n =   4000 : 0.083000 microseconds
+n =   8000 : 0.084000 microseconds
+n =  16000 : 0.080500 microseconds
+n =  32000 : 0.083000 microseconds
+n =  64000 : 0.086500 microseconds
+Coefficients as interpolated from data:
+ 0.0834349*1
+(measuring time in microseconds)
+Sum of squares of residuals: [0.00273086]
+RMS error = 2 percent
+
+Test List-5: concatenating two lists of length n
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 8.133300 microseconds
+n =   2000 : 16.037500 microseconds
+n =   4000 : 31.731900 microseconds
+n =   8000 : 62.830200 microseconds
+n =  16000 : 126.129050 microseconds
+n =  32000 : 263.410100 microseconds
+n =  64000 : 521.951550 microseconds
+Coefficients as interpolated from data:
+ 0.00802526*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.00199771]
+RMS error = 1.7 percent
+
+Test List-6: extracting a slice of length n/2
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 2.036400 microseconds
+n =   2000 : 4.149600 microseconds
+n =   4000 : 7.915200 microseconds
+n =   8000 : 15.927450 microseconds
+n =  16000 : 31.639750 microseconds
+n =  32000 : 63.750850 microseconds
+n =  64000 : 129.190200 microseconds
+Coefficients as interpolated from data:
+ 0.00200882*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.00184963]
+RMS error = 1.6 percent
+
+Test List-7: copy
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 3.976200 microseconds
+n =   2000 : 8.041100 microseconds
+n =   4000 : 15.743200 microseconds
+n =   8000 : 31.467850 microseconds
+n =  16000 : 62.878050 microseconds
+n =  32000 : 127.173350 microseconds
+n =  64000 : 260.960850 microseconds
+Coefficients as interpolated from data:
+ 0.00397697*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.00110129]
+RMS error = 1.3 percent
+
+Test List-8: assigning a slice of length n/2
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 4.168950 microseconds
+n =   2000 : 8.420000 microseconds
+n =   4000 : 17.573000 microseconds
+n =   8000 : 32.750900 microseconds
+n =  16000 : 63.618450 microseconds
+n =  32000 : 127.552000 microseconds
+n =  64000 : 255.497100 microseconds
+Coefficients as interpolated from data:
+ 0.00410778*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.00790703]
+RMS error = 3.4 percent
+
+Test List-9: Delete first
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 0.279000 microseconds
+n =   2000 : 0.528500 microseconds
+n =   4000 : 1.050000 microseconds
+n =   8000 : 2.391500 microseconds
+n =  16000 : 4.486500 microseconds
+n =  32000 : 8.685500 microseconds
+n =  64000 : 19.411000 microseconds
+Coefficients as interpolated from data:
+ 0.000278462*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.01871098]
+RMS error = 5.2 percent
+
+Test List-10: Reverse
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 0.301500 microseconds
+n =   2000 : 0.597500 microseconds
+n =   4000 : 1.147000 microseconds
+n =   8000 : 2.265000 microseconds
+n =  16000 : 4.232000 microseconds
+n =  32000 : 8.658000 microseconds
+n =  64000 : 16.726000 microseconds
+Coefficients as interpolated from data:
+ 0.000279374*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.0194118]
+RMS error = 5.3 percent
+
+Test List-11: Sort
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n*lg(n)',)
+run times:
+n =   1000 : 7.090500 microseconds
+n =   2000 : 13.822000 microseconds
+n =   4000 : 28.349000 microseconds
+n =   8000 : 59.422500 microseconds
+n =  16000 : 148.607500 microseconds
+n =  32000 : 306.744500 microseconds
+n =  64000 : 585.771000 microseconds
+Coefficients as interpolated from data:
+ 0.000619646*n*lg(n)
+(measuring time in microseconds)
+Sum of squares of residuals: [0.03800878]
+RMS error = 7.4 percent
+
+Test Dict-1: create an empty dictionary
+Spec_string:  1<=n<=1 by factors of 2
+var_list ['n']
+Function list: ('1',)
+run times:
+n =      1 : 0.103900 microseconds
+Coefficients as interpolated from data:
+ 0.1039*1
+(measuring time in microseconds)
+Sum of squares of residuals: [0.]
+RMS error = 0 percent
+
+Test Dict-2: dictionary lookup
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('1',)
+run times:
+n =   1000 : 0.034100 microseconds
+n =   2000 : 0.034100 microseconds
+n =   4000 : 0.034000 microseconds
+n =   8000 : 0.034000 microseconds
+n =  16000 : 0.034000 microseconds
+n =  32000 : 0.034200 microseconds
+n =  64000 : 0.035200 microseconds
+Coefficients as interpolated from data:
+ 0.0342194*1
+(measuring time in microseconds)
+Sum of squares of residuals: [0.00092583]
+RMS error = 1.2 percent
+
+Test Dict-3: dictionary copy
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n',)
+run times:
+n =   1000 : 13.794000 microseconds
+n =   2000 : 29.756900 microseconds
+n =   4000 : 53.769500 microseconds
+n =   8000 : 119.331200 microseconds
+n =  16000 : 227.177000 microseconds
+n =  32000 : 823.778400 microseconds
+n =  64000 : 1484.909700 microseconds
+Coefficients as interpolated from data:
+ 0.015412*n
+(measuring time in microseconds)
+Sum of squares of residuals: [0.31869549]
+RMS error = 21 percent
+
+Test Dict-4: dictionary list items
+Spec_string:  1000<=n<=100000 by factors of 2
+var_list ['n']
+Function list: ('n*lg(n)',)
+run times:
+n =   1000 : 14.483100 microseconds
+n =   2000 : 31.069800 microseconds
+n =   4000 : 70.289900 microseconds
+n =   8000 : 162.083100 microseconds
+n =  16000 : 327.619100 microseconds
+n =  32000 : 929.111700 microseconds
+n =  64000 : 2784.242900 microseconds
+Coefficients as interpolated from data:
+ 0.00157879*n*lg(n)
+(measuring time in microseconds)
+Sum of squares of residuals: [0.24376867]
+RMS error = 19 percent
